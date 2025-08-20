@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="css/global.css" />
+
+    <link rel="stylesheet" href="css/components/calendar.css" />
+    <link rel="stylesheet" href="css/components/menu.css" />
+    <link rel="stylesheet" href="css/components/habits.css" />
+    <link rel="stylesheet" href="css/components/weight.css" />
+    <link rel="stylesheet" href="css/components/workout.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Ultimate Tracker</h1>
+    </header>
+
+    <main>
+      <nav id="main-menu">
+        <button class="menu-button" data-section="habits">Habits</button>
+        <button class="menu-button" data-section="calendar">Calendar</button>
+        <button class="menu-button" data-section="workout">Workout</button>
+        <button class="menu-button" data-section="weight">Weight</button>
+      </nav>
+
+      <div id="app-content">
+        <section id="habits" class="page-section">
+          <button class="back-to-menu-btn">Back to Menu</button>
+          <div class="section-header">
+            <h2>Habits</h2>
+            <div id="general-streak-container">
+              <span id="general-streak-counter"></span>
+            </div>
+          </div>
+
+          <div class="add-item-form">
+            <input
+              type="text"
+              id="new-habit-input"
+              placeholder="Añade un nuevo Hábito"
+            />
+            <button id="add-habit-btn">Añadir</button>
+          </div>
+
+          <ul id="habit-list"></ul>
+        </section>
+
+        <section id="calendar" class="page-section">
+          <button class="back-to-menu-btn">Back to Menu</button>
+          <h2>Calendar</h2>
+        </section>
+
+        <section id="workout" class="page-section">
+          <button class="back-to-menu-btn">Back to Menu</button>
+          <div class="section-header">
+            <h2>Today Workout</h2>
+            <span id="workout-date"></span>
+          </div>
+          <div id="today-workout-view">
+            <div id="category-selector-container">
+              <select id="workout-category-select">
+                <option value="">-- Choose a category --</option>
+                <option value="Push">Push</option>
+                <option value="Pull">Pull</option>
+                <option value="Legs">Legs</option>
+                <option value="Arms/Abs">Arms/Abs</option>
+              </select>
+              <button id="save-category-btn">Save Category</button>
+            </div>
+          </div>
+          <div class="add-item-form">
+            <input
+              type="text"
+              id="exercise-name-input"
+              placeholder="Nombre del Ejercicio"
+            />
+            <button id="add-exercise-btn">Add Exercise</button>
+          </div>
+          <ul id="workout-log-list"></ul>
+          <button id="toggle-history-view-btn">Workout History</button>
+          <div id="workout-history-view" style="display: none">
+            <div id="calendar-controls">
+              <button id="prev-month-btn"><</button>
+              <h3 id="current-month-display"></h3>
+              <button id="next-month-btn">></button>
+            </div>
+            <div id="calendar-grid"></div>
+            <div id="workout-details-view">
+              <h4>Workout Details</h4>
+              <p id="details-date"></p>
+              <div id="details-category"></div>
+              <ul id="details-exercise-list"></ul>
+            </div>
+
+            <button id="toggle-progress-view-btn">Exercise Progress</button>
+            <div id="workout-progress-view" style="display: none">
+              <h3>Progress</h3>
+              <select id="progress-exercise-select">
+                <option value="">-- Choose a Exercise --</option>
+              </select>
+              <div id="progress-details"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="weight" class="page-section">
+          <button class="back-to-menu-btn">Back to Menu</button>
+          <div class="section-header">
+            <h2>Weight Record</h2>
+          </div>
+
+          <div id="weekly-summary">
+            <h3>Weekly Average</h3>
+            <p><span id="weekly-average-weight">--</span> kg</p>
+          </div>
+
+          <div id="monthly-summary">
+            <h3>Monthly Average</h3>
+            <p><span id="monthly-average-weight">--</span> kg</p>
+          </div>
+
+          <div class="add-item-form">
+            <input
+              type="number"
+              id="new-weight-input"
+              placeholder="Ingresa tu peso"
+              step="0.1"
+            />
+            <button id="add-weight-btn">Save</button>
+          </div>
+
+          <h3>History</h3>
+          <ul id="weight-history-list"></ul>
+        </section>
+      </div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

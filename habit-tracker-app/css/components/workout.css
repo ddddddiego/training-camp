@@ -1,0 +1,346 @@
+/* css/components/workout.css */
+
+#workout-date {
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #f1f1f1;
+}
+
+#workout-log-list > li {
+  background-color: #3a3a3a;
+  border: 1px solid #e8e8e8;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: #f1f1f1;
+  margin-bottom: 15px;
+  padding: 5px;
+}
+
+.exercise-header .exercise-name {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.sets-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.sets-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 10px;
+  border-radius: 6px;
+}
+
+.sets-list li:nth-child(odd) {
+  background-color: #1e1f20;
+}
+
+.sets-list-header span,
+.sets-list li span {
+  flex-basis: 33%;
+  text-align: center;
+}
+
+.sets-list-header span:first-child,
+.sets-list li span:first-child {
+  text-align: left; /* La primera columna a la izquierda */
+}
+.sets-list-header span:last-child,
+.sets-list li span:last-child {
+  text-align: right; /* La última columna a la derecha */
+}
+
+.add-set-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.add-set-form input {
+  width: 100%;
+  background-color: #1e1f20;
+  border-color: #444;
+  color: #e3e3e3;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.add-set-form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-item-form button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#category-selector-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: #2a2b2c;
+  padding: 15px;
+  border-radius: 8px;
+  align-items: center;
+}
+
+#workout-category-select {
+  flex-grow: 1;
+  background-color: #1e1f20;
+  color: #e3e3e3;
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+#save-category-btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #555;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Botón para eliminar un ejercicio completo */
+.delete-exercise-btn {
+  background: none;
+  border: none;
+  color: #f1f1f1;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 5px;
+}
+.delete-exercise-btn:hover {
+  color: #c62828; /* Rojo oscuro */
+}
+#toggle-history-view-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #424242;
+  color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- ESTILOS DEL CALENDARIO --- */
+#calendar-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+#calendar-controls button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+#calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  background-color: #424242;
+  border-radius: 6px;
+  min-height: 50px;
+  position: relative;
+}
+
+.calendar-day.has-workout {
+  cursor: pointer;
+  font-weight: bold;
+}
+.calendar-day.has-workout:hover {
+  background-color: #c8e6c9;
+}
+.calendar-day .day-number {
+  font-size: 1.1em;
+}
+
+.calendar-day .workout-category {
+  font-size: 0.7em;
+  color: #388e3c;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+}
+
+/* --- ESTILOS DE LA VISTA DE DETALLES --- */
+#workout-details-view {
+  margin-top: 20px;
+  padding: 20px;
+  border-top: 1px solid #3c3c3c;
+}
+#details-exercise-list > li {
+  margin-bottom: 24px;
+}
+#details-exercise-list li strong {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #f1f1f1;
+}
+#details-exercise-list li ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+#details-exercise-list li ul li {
+  padding: 5px 0;
+  color: #b0b0b0;
+}
+#details-category {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.calendar-day.workout-push {
+  background-color: #1e3a5f;
+}
+
+.calendar-day.workout-push .workout-category {
+  color: #409ef0;
+}
+
+.calendar-day.workout-pull {
+  background-color: #4a1c1c;
+}
+
+.calendar-day.workout-pull .workout-category {
+  color: #ff4d4d;
+}
+
+.calendar-day.workout-legs {
+  background-color: #1b3d1f;
+}
+
+.calendar-day.workout-legs .workout-category {
+  color: #67cb6c;
+}
+
+.calendar-day.workout-arms-abs {
+  background-color: #5d4037;
+}
+
+.calendar-day.workout-arms-abs .workout-category {
+  color: #f59738;
+}
+#toggle-progress-view-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #2a2b2c;
+  border: 1px solid #3c3c3c;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #e3e3e3;
+  cursor: pointer;
+}
+
+/* Vista de Progreso */
+#workout-progress-view {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #3c3c3c;
+}
+
+#progress-exercise-select {
+  width: 100%;
+  padding: 12px;
+  background-color: #1e1f20;
+  color: #e3e3e3;
+  border: 1px solid #444;
+  border-radius: 8px;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+#progress-details {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.progress-card {
+  background-color: #2a2b2c;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #3c3c3c;
+  width: 30%;
+}
+
+.progress-card h4 {
+  margin-top: 0;
+  color: #9e9e9e;
+  font-size: 0.9em;
+}
+
+.progress-card p {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+  color: #f1f1f1;
+}
+
+.progress-card.difference.positive {
+  color: #a5d6a7;
+}
+.progress-card.difference.negative {
+  color: #ff8a80;
+}
+
+.view-toggle-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #2a2b2c; /* Fondo oscuro sutil */
+  border: 1px solid #3c3c3c; /* Borde oscuro */
+  border-radius: 8px;
+  font-weight: 600;
+  color: #e3e3e3; /* Texto claro */
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.view-toggle-btn:hover {
+  background-color: #3c3c3c;
+}

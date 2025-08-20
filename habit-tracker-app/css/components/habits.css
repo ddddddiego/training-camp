@@ -1,0 +1,94 @@
+#habit-list {
+  list-style: none;
+  padding: 0;
+}
+
+#habit-list li {
+  background-color: #2a2b2c;
+  padding: 15px; /* Ajustado para consistencia */
+  border-bottom: 1px solid #3c3c3c;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+#habit-list li.completed {
+  background-color: #1b3d1f;
+  color: #a5d6a7;
+}
+
+#habit-list li.completed .habit-name {
+  text-decoration: line-through;
+  color: #a5d6a7;
+}
+
+.habit-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.habit-name {
+  font-size: 1.1em;
+  color: #e3e3e3;
+  margin-bottom: 5px;
+}
+
+.habit-streak {
+  font-size: 0.9em;
+  color: #9e9e9e;
+}
+
+.complete-btn {
+  padding: 8px 15px;
+  border: 1px solid #9e9e9e;
+  background-color: transparent;
+  color: #e3e3e3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.complete-btn:hover {
+  background-color: #3c3c3c;
+}
+
+.complete-btn:disabled {
+  background-color: #2a2b2c;
+  cursor: not-allowed;
+  color: #555;
+  border-color: #444;
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  background-color: transparent;
+  color: #9e9e9e;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #4a1c1c;
+  color: #ff8a80;
+}
+
+#general-streak-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#general-streak-counter {
+  color: #9e9e9e;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9em;
+  border: 1px solid #ddd;
+  display: inline-block;
+}

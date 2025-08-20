@@ -1,0 +1,28 @@
+#main-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu-button {
+  background-color: #5a5959;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 50px;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.menu-button:hover,
+.menu-button:active {
+  background-color: #e9e9e9;
+  transform: translateY(-2px);
+}

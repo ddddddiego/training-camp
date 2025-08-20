@@ -1,0 +1,38 @@
+#weekly-summary,
+#monthly-summary {
+  background-color: #454545;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#weekly-summary h3 {
+  margin-top: 0;
+  color: #f1f1f1;
+}
+
+#weekly-summary p,
+#monthly-summary p {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #f1f1f1;
+  margin: 0;
+}
+
+#weight-history-list {
+  list-style: none;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#weight-history-list li .date {
+  color: #f1f1f1;
+  margin-right: 60px;
+}
+
+#weight-history-list li .weight {
+  font-weight: 600;
+}
