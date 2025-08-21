@@ -92,7 +92,7 @@ export function setupWorkout() {
       alert("Por favor, ingresa un ejercicio");
       return;
     }
-    const todayLog = getTodayLog();
+    const today = new Date().toLocaleDateString("sv-SE", { timeZone: "America/Santiago" });
     todayLog.exercises.push({ name: name, sets: [] });
 
     nameInput.value = "";
@@ -139,7 +139,7 @@ export function setupWorkout() {
     //Rellenar los días del mes
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
-      const dateString = date.toISOString().split("T")[0];
+const dateString = date.toLocaleDateString("sv-SE", { timeZone: "America/Santiago" });
       const workout = workoutLogs.find((log) => log.date === dateString);
 
       const dayDiv = document.createElement("div");
@@ -168,10 +168,11 @@ export function setupWorkout() {
     const workout = workoutLogs.find((log) => log.date === date);
     if (!workout) return;
 
-    detailsDateEl.textContent = new Date(date).toLocaleDateString("es-ES", {
+    detailsDateEl.textContent = new Date(date + "T00:00:00").toLocaleDateString("es-ES", {
       weekday: "long",
       day: "numeric",
       month: "long",
+      timeZone: "America/Santiago"
     });
     detailsCategoryEl.textContent = `Categoria: ${
       workout.category || "Sin categoria"
