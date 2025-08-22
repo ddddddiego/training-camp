@@ -3,6 +3,7 @@
 import { setupHabits } from "./habits.js";
 import { setupWeight } from "./weight.js";
 import { setupWorkout } from "./workout.js";
+import { setupTodoList } from "./todolist.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // --- NAVEGACIÓN GENERAL ---
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupHabits();
   setupWeight();
   setupWorkout();
+  setupTodoList();
 
   console.log("Aplicación inicializada correctamente.");
 });

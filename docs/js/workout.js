@@ -29,12 +29,19 @@ export function setupWorkout() {
   let currentDate = new Date();
   let workoutLogs = JSON.parse(localStorage.getItem("workoutLogs")) || [];
 
+  function getLocalYYYYMMDD(date = new Date()) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  }
+
   // guardar ejercicios
   function saveWorkouts() {
     localStorage.setItem("workoutLogs", JSON.stringify(workoutLogs));
   }
   function getTodayLog() {
-    const today = new Date().toISOString().split("T")[0];
+    const today = getLocalYYYYMMDD();
     let todayLog = workoutLogs.find((log) => log.date === today);
 
     if (!todayLog) {
@@ -92,7 +99,7 @@ export function setupWorkout() {
       alert("Por favor, ingresa un ejercicio");
       return;
     }
-    const today = new Date().toLocaleDateString("sv-SE", { timeZone: "America/Santiago" });
+    const todayLog = getTodayLog();
     todayLog.exercises.push({ name: name, sets: [] });
 
     nameInput.value = "";
@@ -139,7 +146,7 @@ export function setupWorkout() {
     //Rellenar los días del mes
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day);
-const dateString = date.toLocaleDateString("sv-SE", { timeZone: "America/Santiago" });
+      const dateString = date.toISOString().split("T")[0];
       const workout = workoutLogs.find((log) => log.date === dateString);
 
       const dayDiv = document.createElement("div");
@@ -168,11 +175,10 @@ const dateString = date.toLocaleDateString("sv-SE", { timeZone: "America/Santiag
     const workout = workoutLogs.find((log) => log.date === date);
     if (!workout) return;
 
-    detailsDateEl.textContent = new Date(date + "T00:00:00").toLocaleDateString("es-ES", {
+    detailsDateEl.textContent = new Date(date).toLocaleDateString("es-ES", {
       weekday: "long",
       day: "numeric",
       month: "long",
-      timeZone: "America/Santiago"
     });
     detailsCategoryEl.textContent = `Categoria: ${
       workout.category || "Sin categoria"
