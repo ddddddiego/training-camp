@@ -68,6 +68,11 @@ export function setupWorkout() {
                     <span>Serie ${setIndex + 1}</span>
                     <span>${set.reps} reps</span>
                     <span>${set.weight} kg</span>
+                    ${set.failure ? "<span class='badge'>Fallo</span>" : ""}
+                    ${set.comment ? `<div class="set-comment">💭 ${set.comment}</div>` : ""}
+                    <button class="failure-set-btn" data-exercise-index="${exerciseIndex}" data-set-index="${setIndex}">Fallo</button>
+                    <button class="edit-set-btn" data-exercise-index="${exerciseIndex}" data-set-index="${setIndex}">✎</button>
+                    <button class="comment-set-btn" data-exercise-index="${exerciseIndex}" data-set-index="${setIndex}">💬</button>
                 </li>`
           )
           .join("");
@@ -107,12 +112,11 @@ export function setupWorkout() {
     renderWorkoutLog();
   }
   function addSet(exerciseIndex, reps, weight) {
-    const todayLog = getTodayLog();
-    if (todayLog && todayLog.exercises[exerciseIndex]) {
-      todayLog.exercises[exerciseIndex].sets.push({ reps, weight });
-      saveWorkouts();
-      renderWorkoutLog();
-    }
+    const todayLog = getTodayLog(); 
+    if (todayLog && todayLog.exercises[exerciseIndex]) { 
+      todayLog.exercises[exerciseIndex].sets.push({ reps, weight }); 
+      saveWorkouts(); 
+      renderWorkoutLog(); }
   }
   function deleteExercise(exerciseIndex) {
     const todayLog = getTodayLog();
@@ -270,6 +274,43 @@ export function setupWorkout() {
       </div>
     `;
   }
+  function toggleFailure(exerciseIndex, setIndex) {
+    const todayLog = getTodayLog();
+    const set = todayLog.exercises[exerciseIndex].sets[setIndex];
+
+    if(!set) return;
+    set.failure = !set.failure;
+    saveWorkouts();
+    renderWorkoutLog();
+  }
+  function editSet(exerciseIndex, setIndex) {
+    const todayLog = getTodayLog();
+    const set = todayLog.exercises[exerciseIndex].sets[setIndex];
+    if(!set) return;
+
+    const newReps = prompt("Edit Reps:", set.reps);
+    const newWeight = prompt("Edit Weight", set.weight);
+    if (newReps !== null) {  // solo actualiza si no es cancelado
+        set.reps = newReps;
+    }
+    if (newWeight !== null) { // solo actualiza si no es cancelado
+        set.weight = newWeight;
+    }
+    saveWorkouts();
+    renderWorkoutLog();
+    
+  }
+  function addComment(exerciseIndex, setIndex) {
+    const todayLog = getTodayLog();
+    const set = todayLog.exercises[exerciseIndex].sets[setIndex];
+    const newComment = prompt("Comment this set: ", set.comment || "");
+    if(newComment === null) return;
+      
+    set.comment = newComment.trim();
+    saveWorkouts();
+    renderWorkoutLog();
+    
+  }
   if (addExerciseBtn) {
     const todayFormatted = new Date().toLocaleDateString("es-ES", {
       weekday: "long",
@@ -286,6 +327,15 @@ export function setupWorkout() {
       if (event.target.classList.contains("delete-exercise-btn")) {
         const exerciseIndex = event.target.dataset.exerciseIndex;
         deleteExercise(exerciseIndex);
+      }
+      if (event.target.classList.contains("failure-set-btn")) {
+        toggleFailure(event.target.dataset.exerciseIndex, event.target.dataset.setIndex);
+      }
+      if (event.target.classList.contains("edit-set-btn")) {
+        editSet(event.target.dataset.exerciseIndex, event.target.dataset.setIndex);
+      }
+      if (event.target.classList.contains("comment-set-btn")) {
+        addComment(event.target.dataset.exerciseIndex, event.target.dataset.setIndex);
       }
     });
 

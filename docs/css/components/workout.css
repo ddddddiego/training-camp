@@ -344,3 +344,46 @@
 .view-toggle-btn:hover {
   background-color: #3c3c3c;
 }
+
+.badge {
+  width: 100%;
+  background-color: #1e1f20;
+  border-color: #444;
+  color: #e3e3e3;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.set-comment {
+  font-style: italic;
+  color: #f1f1f1;
+  margin-left: 10px;
+}
+
+.failure-set-btn {
+  background-color: #1e1f20;
+  border-color: #444;
+  color: #e3e3e3;
+  padding: 3px, 3px;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.edit-set-btn{
+  background-color: #1e1f20;
+  border-color: #5c5c5c;
+  color: #e3e3e3;
+  padding: 3px, 3px;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.comment-set-btn {
+  background-color: #1e1f20;
+  border-color: #444;
+  color: #e3e3e3;
+  padding: 3px, 3px;
+  border-radius: 6px;
+  font-size: 1em;
+}
