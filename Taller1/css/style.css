@@ -1,0 +1,16 @@
+.navbar-custom {
+    background-color: #C8102E;
+    border: black;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+.btn-custom {
+    background-color: #9e0c24;
+    color: #f1f1f1;
+    border: 1px solid #f1f1f11f;
+    border-radius: 8px;
+}
+

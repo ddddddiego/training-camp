@@ -43,6 +43,7 @@
   align-items: center;
   padding: 12px 10px;
   border-radius: 6px;
+  position : relative;
 }
 
 .sets-list li:nth-child(odd) {
@@ -386,4 +387,25 @@
   padding: 3px, 3px;
   border-radius: 6px;
   font-size: 1em;
+}
+
+.set-actions {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 6px;
+}
+
+.set-actions button {
+  background-color: #1e1f20;
+  border: 1px solid #444;
+  color: #e3e3e3;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+.set-actions button:hover {
+  background-color: #333;
 }
