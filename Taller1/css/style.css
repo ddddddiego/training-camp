@@ -14,3 +14,14 @@ body {
     border-radius: 8px;
 }
 
+.btn-custom:hover {
+    background-color: #6d0718; /* Azul más oscuro al pasar el mouse */
+    border-color: #000000a4;
+}
+
+.btn-custom2 {
+    background-color: #9e0c24;
+    color: #f1f1f1;
+    border: 1px solid #f1f1f11f;
+    border-radius: 8px;
+}

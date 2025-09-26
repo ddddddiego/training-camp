@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Plato - Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css"/> 
+</head>
+<body class="bg-light"> 
+    
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+        
+        <div class="p-4 shadow bg-white rounded admin-form-container" style="max-width: 800px; width: 90%;"> 
+            
+            <a href="menu.html" class="btn btn-sm btn-outline-secondary mb-4">
+                Volver al Menú
+            </a>
+
+            <h3 class="mb-4 text-center">Modificar Plato</h3>
+            
+            <div class="row">
+                
+                <div class="col-12 col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3 text-secondary">Seleccionar Plato</h5>
+                    
+                    <div class="list-group">
+                        <a href="#plato-1-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark active" 
+                        data-plato-id="1">
+                            Plato 1
+                        </a>
+                        
+                        <a href="#plato-2-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="2">
+                            Plato 2
+                        </a>
+                        
+                        <a href="#plato-3-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="3">
+                            Plato 3
+                        </a>
+
+                        <a href="#plato-4-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="4">
+                            Plato 4
+                        </a>
+                        
+                        <a href="#plato-5-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="5">
+                            Plato 5
+                        </a>
+
+                        <a href="#plato-6-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="6">
+                            Plato 6
+                        </a>
+
+                        <a href="#plato-7-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="7">
+                            Plato 7
+                        </a>
+
+                        <a href="#plato-8-details" 
+                        class="list-group-item list-group-item-action list-group-item-dark" 
+                        data-plato-id="8">
+                            Plato 8
+                        </a>
+                        
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-8">
+                    <form id="modificarPlatoForm">
+                        
+                        <input type="hidden" id="platoId" value="1"> 
+                        
+                        <div class="mb-3">
+                            <label for="nombrePlato" class="form-label">Nombre del Plato</label>
+                            <input type="text" class="form-control" id="nombrePlato" value="Lomo Saltado">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio</label>
+                            <input type="text" class="form-control" id="precio" value="$18.500">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción del Plato</label>
+                            <textarea class="form-control" id="descripcion" rows="3">Clásico lomo saltado con papas fritas y arroz blanco.</textarea>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="stock" class="form-label">Stock Actual</label>
+                            <input type="number" class="form-control" id="stock" value="15">
+                        </div>
+                        
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <button type="button" class="btn btn-danger">Eliminar Plato</button>
+                            <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    </body>
+</html>
