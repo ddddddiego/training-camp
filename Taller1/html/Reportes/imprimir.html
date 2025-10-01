@@ -24,7 +24,7 @@
                     <h4 class="mb-3 text-white">Reportes</h4>
                     
                     <div class="report-list border border-secondary">
-                        <h6 class="text-secondary border-bottom pb-2">Orden de llegada</h6>
+                        <h6 class="text-secondary border-bottom pb-2">Selecciona una Orden</h6>
                         
                         <div>Pedido 1</div>
                         <div>Pedido 2</div>
@@ -34,10 +34,15 @@
                         <div>Pedido 7</div>
                         <div>Pedido 8</div>
                     </div>
+                    <button id="ordenbtn" class="btn btn-custom mt-2">
+                        Imprimir Orden
+                    </button>
+                    <button id="boletabtn" class="btn btn-custom mt-2">
+                        Emitir Boleta
+                    
+
                 </div>
-            </div>
-            <a href="imprimir.html" class="btn btn-custom mt-2">Imprimir Ordenes</a>
-            <a href="direccion.html" class="btn btn-custom mt-2">Dirección delivery</a>            
+            </div>         
 
 
 
@@ -45,5 +50,20 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script> <!-- Mensajes -->
+        const botonBoleta = document.getElementById('boletabtn');
+        if (botonBoleta) {
+            botonBoleta.addEventListener('click', function() {
+                alert('Se ha emitido la boleta seleccionada.');
+            });
+        }
+        const botonOrden = document.getElementById('ordenbtn');
+        if (botonOrden) {
+            botonOrden.addEventListener('click', function() {
+                alert('Boleta seleccionada impresa.');
+            });
+        }
+    </script>
 </body>
 </html>
