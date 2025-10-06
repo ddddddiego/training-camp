@@ -1,10 +1,22 @@
 .navbar-custom {
     background-color: #C8102E;
-    border: black;
+    border: none;
+}
+
+:root {
+    --color-primary-red: #C8102E;      
+    --color-primary-dark: #9e0c24;     
+    --color-primary-hover: #6d0718;    
+    --color-background: #f1f1f1;       
+    --color-text-light: #f8f8f8;       
+    --color-text-dark: #333333;        
+    --color-accent: #FFC425;           
 }
 
 body {
     background-color: #f1f1f1;
+    color: var(--color-text-dark);
+    min-height: 100vh;
 }
 
 .btn-custom {
@@ -24,4 +36,55 @@ body {
     color: #f1f1f1;
     border: 1px solid #f1f1f11f;
     border-radius: 8px;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 20px;
+}
+
+.report-list div {
+    padding: 8px 5px;
+    border-bottom: 1px dashed #cccccc;
+    cursor: pointer;
+}
+
+h4 {
+    color: #161616;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.action-buttons-group {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    margin-top: 20px;
+}
+
+        .window-box {
+    border: 1px solid var(--color-accent);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+.report-list {
+    background-color: white;
+    color: var(--color-text-dark); 
+    border: black; 
+    padding: 15px;
+    border-radius: 8px;
+    height: 300px;
+    overflow-y: auto;
+    font-size: 1.1rem;
+}
+.report-list div:last-child {
+    border-bottom: none;
+}
+.report-list div:hover {
+    background-color: #f5f5f5;
 }
