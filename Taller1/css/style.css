@@ -166,4 +166,49 @@ footer {
     text-decoration: none;
 }
 
+.report-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.report-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px 50px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+}
+
+.report-card h2 {
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.report-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9e0c24;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 14px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.report-option:hover {
+    background-color: #6d0718;
+}
+
+.report-option i {
+    font-size: 1.3rem;
+}
